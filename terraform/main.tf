@@ -70,7 +70,7 @@ resource "google_compute_instance" "backend" {
     sudo apt-get update
     sudo apt-get install -y docker.io
     sudo docker run -d -p 3000:3000 docker.io/adiboysitorus/backend:latest
-  EOT
+    EOT
 }
 
 resource "google_compute_global_address" "private_range" {
