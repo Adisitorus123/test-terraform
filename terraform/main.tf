@@ -47,7 +47,7 @@ resource "google_compute_instance" "frontend" {
   metadata_startup_script = <<-EOT
     sudo apt-get update
     sudo apt-get install -y docker.io
-    sudo docker run -d -p 80:80 REGION-docker.pkg.dev/${var.project_id}/repo/frontend:latest
+    sudo docker run -d -p 80:80 docker.io/adiboysitorus/frontend:latest
   EOT
 }
 
@@ -69,7 +69,7 @@ resource "google_compute_instance" "backend" {
   metadata_startup_script = <<-EOT
     sudo apt-get update
     sudo apt-get install -y docker.io
-    sudo docker run -d -p 3000:3000 REGION-docker.pkg.dev/${var.project_id}/repo/backend:latest
+    sudo docker run -d -p 3000:3000 docker.io/adiboysitorus/backend:latest
   EOT
 }
 
